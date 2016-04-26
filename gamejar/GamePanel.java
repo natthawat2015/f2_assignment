@@ -22,12 +22,15 @@ public class GamePanel extends JPanel {
 	
 	
 	public void updateGameUI(GameReporter reporter){
-		
-		//Set property for big
 		g2d.clearRect(0, 0, 400, 600);
+					
+		g2d.setColor(Color.WHITE);		
+		g2d.drawString(String.format("%08d", reporter.getScore()), 300, 20);
 		
-		//Show big box
-		for(Sprite s : sprite){
+		g2d.setColor(Color.WHITE);
+		g2d.drawString(String.format("hp:%02d", reporter.getSpaceShipHp()), 230, 20);
+		
+		for(Sprite s : sprites){
 			s.draw(g2d);
 		}
 		
