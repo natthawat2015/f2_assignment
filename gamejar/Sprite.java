@@ -6,7 +6,7 @@ import java.awt.geom.Rectangle2D.Double;
 
 //Abstract class
 public abstract class Sprite { 
-	int x,y,width,hieght;
+	int x , y, width, hieght;
 	
 	public Sprite(int x, int y, int width, int hieght) {
 		this.x = x;
