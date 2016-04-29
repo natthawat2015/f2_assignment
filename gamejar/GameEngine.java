@@ -13,14 +13,18 @@ import java.util.Iterator;
 public class GameEngine implements GameReporter{
 	GamePanel panel;
 	
+	private SpaceShip v;
+	
 	private ArrayList<Enemy> enemies = new ArrayList<Enemy>();
 	private Timer time;
 	
 	private double difficulty = 0.1;
 	
-	public GameEngine(GamePanel panel) {
+	public GameEngine(GamePanel panel, SpaceShip v) {
 		this.panel = panel;
+		this.v = v;
 		
+		gp.sprites.add(v);
 		
 		time = new Timer(50, new ActionListener() {
 			
