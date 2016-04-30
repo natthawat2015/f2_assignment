@@ -17,6 +17,7 @@ public class GameEngine implements KeyListener, GameReporter{
 	
 	private ArrayList<Enemy> enemies = new ArrayList<Enemy>();
 	private Timer time;
+	private long score = 0;
 	
 	private double difficulty = 0.1;
 	
@@ -59,6 +60,7 @@ public class GameEngine implements KeyListener, GameReporter{
 			if(!e.isAlive()){
 				e_iter.remove();
 				gp.sprites.remove(e);
+				score += 100;
 
 			}
 		}
@@ -87,7 +89,9 @@ public class GameEngine implements KeyListener, GameReporter{
  		}
  	}
  
-
+	public long getScore(){
+		return score;
+	}
 	
 	@Override
 	public void keyPressed(KeyEvent e) {
