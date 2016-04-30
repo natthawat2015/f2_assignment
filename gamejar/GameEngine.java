@@ -10,7 +10,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 
 
-public class GameEngine implements GameReporter{
+public class GameEngine implements KeyListener, GameReporter{
 	GamePanel panel;
 	
 	private SpaceShip v;
@@ -72,7 +72,21 @@ public class GameEngine implements GameReporter{
 
 			}
 	}
-	
+	void controlVehicle(KeyEvent e) {
+ 		switch (e.getKeyCode()) {
+		
+		case KeyEvent.VK_LEFT:
+ 			v.move(-1);
+ 			break;
+ 		case KeyEvent.VK_RIGHT:
+ 			v.move(1);
+ 			break;
+ 		case KeyEvent.VK_D:
+ 			difficulty += 0.1;
+			break;
+ 		}
+ 	}
+ 
 
 	
 	@Override
